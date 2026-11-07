@@ -3,6 +3,7 @@ from __future__ import annotations
 import json, re, sys
 from pathlib import Path
 from regulation_search import search_regulations
+from school_crawl_search import search_pages
 
 BASE = Path(__file__).resolve().parent
 DATA = BASE
@@ -136,8 +137,13 @@ def search_school_info(query: str):
     ext = extension_results(q)
     if ext:
         return {'查詢': q, **ext}
+    pages=search_pages(q)
+    if pages['matches']:
+        return {'查詢':q,'公開網頁索引':pages}
     return {'查詢': q, '結果': '在目前校方資料中找不到明確紀錄。', '官方首頁': 'https://www.ykvs.ntpc.edu.tw/'}
 
+
+CRAWL_TOOL = {'name':'search_school_pages','description':'查詢事先蒐集並審核的指定學校公開網頁快照，回傳標題、摘錄、來源網址與擷取時間；不是即時資料。','inputSchema':{'type':'object','properties':{'query':{'type':'string'}},'required':['query']}}
 
 REG_TOOL = {'name':'search_regulations','description':'依口語同義詞查詢校方學習評量、學期補考、段考補考、重修補修、學分抵免、學習歷程等官方文件索引；提供可追溯來源與資料缺口，不得推測開班或期限。','inputSchema':{'type':'object','properties':{'query':{'type':'string'}},'required':['query']}}
 
@@ -178,11 +184,13 @@ def main():
                 continue
             elif method == 'tools/list':
                 if mid is not None:
-                    send({'jsonrpc':'2.0','id':mid,'result':{'tools':[TOOL,REG_TOOL]}})
+                    send({'jsonrpc':'2.0','id':mid,'result':{'tools':[TOOL,REG_TOOL,CRAWL_TOOL]}})
             elif method == 'tools/call':
                 name = params.get('name')
                 args = params.get('arguments') or {}
-                if name == 'search_regulations':
+                if name == 'search_school_pages':
+                    result = search_pages(args.get('query',''))
+                elif name == 'search_regulations':
                     result = search_regulations(args.get('query',''))
                 elif name == 'search_school_info':
                     result = search_school_info(args.get('query',''))

@@ -1,0 +1,27 @@
+{
+  "start_urls": [
+    "https://www.ykvs.ntpc.edu.tw/"
+  ],
+  "allowed_hosts": [
+    "www.ykvs.ntpc.edu.tw",
+    "ykvs.ntpc.edu.tw"
+  ],
+  "max_pages": 150,
+  "max_depth": 3,
+  "delay_seconds": 1.5,
+  "timeout_seconds": 12,
+  "max_response_bytes": 2000000,
+  "max_text_chars": 16000,
+  "user_agent": "MiniCampusAssistantResearchBot/1.0 (educational, respect robots.txt)",
+  "include_path_patterns": [],
+  "exclude_path_patterns": [
+    "/login",
+    "/admin",
+    "/wp-admin",
+    "/logout"
+  ],
+  "output_file": "school-crawl-data.json",
+  "max_documents": 30,
+  "max_pdf_bytes": 8000000,
+  "retries": 2
+}
