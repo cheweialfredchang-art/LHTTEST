@@ -1,0 +1,805 @@
+{
+  "description": "100 synthetic routing/source-presence regression questions; NOT 100 verified correct-answer cases",
+  "cases": [
+    {
+      "id": "R001",
+      "topic": "credit",
+      "question": "請問重修的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R002",
+      "topic": "credit",
+      "question": "我想知道重修，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R003",
+      "topic": "credit",
+      "question": "請問補修的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R004",
+      "topic": "credit",
+      "question": "我想知道補修，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R005",
+      "topic": "credit",
+      "question": "請問重補修的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R006",
+      "topic": "credit",
+      "question": "我想知道重補修，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R007",
+      "topic": "credit",
+      "question": "請問學分不足的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R008",
+      "topic": "credit",
+      "question": "我想知道學分不足，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R009",
+      "topic": "credit",
+      "question": "請問被當的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R010",
+      "topic": "credit",
+      "question": "我想知道被當，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R011",
+      "topic": "credit",
+      "question": "請問學期補考的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R012",
+      "topic": "credit",
+      "question": "我想知道學期補考，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R013",
+      "topic": "credit",
+      "question": "請問畢業條件的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R014",
+      "topic": "credit",
+      "question": "我想知道畢業條件，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R015",
+      "topic": "credit",
+      "question": "請問重補修報名的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R016",
+      "topic": "credit",
+      "question": "我想知道重補修報名，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R017",
+      "topic": "credit",
+      "question": "請問學分預警的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R018",
+      "topic": "credit",
+      "question": "我想知道學分預警，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R019",
+      "topic": "credit",
+      "question": "請問補考規定的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R020",
+      "topic": "credit",
+      "question": "我想知道補考規定，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R021",
+      "topic": "leave",
+      "question": "請問請假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R022",
+      "topic": "leave",
+      "question": "我想知道請假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R023",
+      "topic": "leave",
+      "question": "請問病假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R024",
+      "topic": "leave",
+      "question": "我想知道病假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R025",
+      "topic": "leave",
+      "question": "請問事假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R026",
+      "topic": "leave",
+      "question": "我想知道事假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R027",
+      "topic": "leave",
+      "question": "請問補假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R028",
+      "topic": "leave",
+      "question": "我想知道補假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R029",
+      "topic": "leave",
+      "question": "請問請假規則的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R030",
+      "topic": "leave",
+      "question": "我想知道請假規則，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R031",
+      "topic": "leave",
+      "question": "請問請假流程的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R032",
+      "topic": "leave",
+      "question": "我想知道請假流程，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R033",
+      "topic": "leave",
+      "question": "請問缺課的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R034",
+      "topic": "leave",
+      "question": "我想知道缺課，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R035",
+      "topic": "leave",
+      "question": "請問喪假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R036",
+      "topic": "leave",
+      "question": "我想知道喪假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R037",
+      "topic": "leave",
+      "question": "請問公假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R038",
+      "topic": "leave",
+      "question": "我想知道公假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R039",
+      "topic": "leave",
+      "question": "請問請假證明的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R040",
+      "topic": "leave",
+      "question": "我想知道請假證明，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R041",
+      "topic": "discipline",
+      "question": "請問獎懲的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R042",
+      "topic": "discipline",
+      "question": "我想知道獎懲，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R043",
+      "topic": "discipline",
+      "question": "請問嘉獎的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R044",
+      "topic": "discipline",
+      "question": "我想知道嘉獎，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R045",
+      "topic": "discipline",
+      "question": "請問警告的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R046",
+      "topic": "discipline",
+      "question": "我想知道警告，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R047",
+      "topic": "discipline",
+      "question": "請問小過的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R048",
+      "topic": "discipline",
+      "question": "我想知道小過，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R049",
+      "topic": "discipline",
+      "question": "請問大過的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R050",
+      "topic": "discipline",
+      "question": "我想知道大過，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R051",
+      "topic": "discipline",
+      "question": "請問手機管理的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R052",
+      "topic": "discipline",
+      "question": "我想知道手機管理，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R053",
+      "topic": "discipline",
+      "question": "請問行動載具的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R054",
+      "topic": "discipline",
+      "question": "我想知道行動載具，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R055",
+      "topic": "discipline",
+      "question": "請問校規的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R056",
+      "topic": "discipline",
+      "question": "我想知道校規，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R057",
+      "topic": "discipline",
+      "question": "請問學生手冊的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R058",
+      "topic": "discipline",
+      "question": "我想知道學生手冊，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R059",
+      "topic": "discipline",
+      "question": "請問班級秩序的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R060",
+      "topic": "discipline",
+      "question": "我想知道班級秩序，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R061",
+      "topic": "calendar",
+      "question": "請問行事曆的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R062",
+      "topic": "calendar",
+      "question": "我想知道行事曆，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R063",
+      "topic": "calendar",
+      "question": "請問開學日期的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R064",
+      "topic": "calendar",
+      "question": "我想知道開學日期，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R065",
+      "topic": "calendar",
+      "question": "請問期末考的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R066",
+      "topic": "calendar",
+      "question": "我想知道期末考，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R067",
+      "topic": "calendar",
+      "question": "請問學校活動的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R068",
+      "topic": "calendar",
+      "question": "我想知道學校活動，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R069",
+      "topic": "calendar",
+      "question": "請問暑假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R070",
+      "topic": "calendar",
+      "question": "我想知道暑假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R071",
+      "topic": "calendar",
+      "question": "請問寒假的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R072",
+      "topic": "calendar",
+      "question": "我想知道寒假，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R073",
+      "topic": "calendar",
+      "question": "請問選課的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R074",
+      "topic": "calendar",
+      "question": "我想知道選課，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R075",
+      "topic": "calendar",
+      "question": "請問學習歷程的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R076",
+      "topic": "calendar",
+      "question": "我想知道學習歷程，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R077",
+      "topic": "calendar",
+      "question": "請問獎學金的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R078",
+      "topic": "calendar",
+      "question": "我想知道獎學金，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R079",
+      "topic": "calendar",
+      "question": "請問學校公告的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R080",
+      "topic": "calendar",
+      "question": "我想知道學校公告，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R081",
+      "topic": "contact",
+      "question": "請問教務處電話的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R082",
+      "topic": "contact",
+      "question": "我想知道教務處電話，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R083",
+      "topic": "contact",
+      "question": "請問學務處分機的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R084",
+      "topic": "contact",
+      "question": "我想知道學務處分機，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R085",
+      "topic": "contact",
+      "question": "請問註冊組的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R086",
+      "topic": "contact",
+      "question": "我想知道註冊組，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R087",
+      "topic": "contact",
+      "question": "請問教學組的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R088",
+      "topic": "contact",
+      "question": "我想知道教學組，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R089",
+      "topic": "contact",
+      "question": "請問實研組的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R090",
+      "topic": "contact",
+      "question": "我想知道實研組，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R091",
+      "topic": "contact",
+      "question": "請問輔導室的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R092",
+      "topic": "contact",
+      "question": "我想知道輔導室，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R093",
+      "topic": "contact",
+      "question": "請問總務處的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R094",
+      "topic": "contact",
+      "question": "我想知道總務處，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R095",
+      "topic": "contact",
+      "question": "請問資訊科的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R096",
+      "topic": "contact",
+      "question": "我想知道資訊科，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R097",
+      "topic": "contact",
+      "question": "請問資料處理科的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R098",
+      "topic": "contact",
+      "question": "我想知道資料處理科，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R099",
+      "topic": "contact",
+      "question": "請問校長室的規定是什麼？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    },
+    {
+      "id": "R100",
+      "topic": "contact",
+      "question": "我想知道校長室，有官方來源嗎？",
+      "expected_route": "v9-evidence-agent",
+      "verified_answer": null,
+      "evaluation_status": "requires_manual_gold_review"
+    }
+  ]
+}

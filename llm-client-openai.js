@@ -1,3 +1,4 @@
+import {taiwanCalendar} from './taiwan-time.js';
 import OpenAI from 'openai';
 
 const SYSTEM = `你是「鶯歌工商校務 AI 助理」。
@@ -50,7 +51,8 @@ export class OpenAILLMClient {
       const answer = fallbackNatural(user, raw);
       return {reply:answer, messages:[...messages,{role:'assistant',content:answer}]};
     }
-    const history = [{role:'system',content:SYSTEM}, ...messages.map(m => ({role:m.role, content:Array.isArray(m.content) ? m.content.filter(x=>x?.type==='text').map(x=>x.text).join('') : m.content}))];
+    const calendar=taiwanCalendar();
+    const history = [{role:'system',content:SYSTEM+'\n台灣現在日期：'+calendar.todayLabel+'；本週（週一至週日）：'+calendar.weekLabel+'。不得使用模型內建日期推測本週；學校活動需有校方來源。'}, ...messages.map(m => ({role:m.role, content:Array.isArray(m.content) ? m.content.filter(x=>x?.type==='text').map(x=>x.text).join('') : m.content}))];
     let answer = '';
     for (let step = 0; step < this.maxAgentSteps; step++) {
       const tools = this.mcp.ready ? this.mcp.getOpenAITools() : [];

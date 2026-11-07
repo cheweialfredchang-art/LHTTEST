@@ -5,8 +5,11 @@ import { fileURLToPath } from 'node:url';
 import { MCPClient } from './mcp-client.js';
 import { OpenAILLMClient } from './llm-client-openai.js';
 import { getQuickReply } from './quick-reply.js';
+import {taiwanCalendar} from './taiwan-time.js';
 import crypto from 'node:crypto';
 import {searchRegulationFallback} from './regulation-bridge.js';
+import {runEvidenceAgent,isSchool} from './agent-v9.js';
+import {recordEvent,summary,recordFeedback} from './metrics-v9.js';
 
 const app = express();
 app.use(express.json({ limit: '1mb' }));
@@ -23,8 +26,9 @@ let mcpError = null;
 const CREDIT = /重修|補修|重補修|學分沒過|學分不足|學分不夠|補學分|被當|學分未取得/;
 const SCHOOL = /分機|電話|教室|場館|老師|教師|主任|組長|職稱|單位|姓名|行事曆|行程|校規|規定|法規|條文|請假|行動載具|手機|獎懲|成績|考試|補考|學分|編班|轉班|抵免|學習歷程|班級|重修|補修|重補修|學分不足|學分不夠|被當/;
 
+app.get('/api/time', (req,res) => res.json(taiwanCalendar()));
 app.get('/healthz', (req, res) => {
-  res.json({ ok: true, mcpReady: mcp.ready, mcpTools: mcp.tools.map(x => x.name), mcpError, openaiConfigured: llm.enabled });
+  res.json({ ok: true, mcpReady: mcp.ready, mcpTools: mcp.tools.map(x => x.name), mcpError, openaiConfigured: llm.enabled, taiwanTime: taiwanCalendar() });
 });
 
 app.post('/chat', async (req, res) => {
@@ -38,12 +42,11 @@ app.post('/chat', async (req, res) => {
     if (q.length > 2000) return res.status(400).json({error:'問題過長，請縮短至 2000 字以內。'});
     const quick = await getQuickReply(q);
     if (quick !== null) { route='quick-reply'; return res.json({ reply: quick, messages: [...messages, {role:'assistant', content:quick}], trace:{id:traceId,route,elapsedMs:Date.now()-started} }); }
-    if (CREDIT.test(q) && mcp.ready) {
-      route='verified-credit-retrieval';
-      const raw=await mcp.callTool('search_regulations',{query:q});
-      const result=JSON.parse(raw);
-      const response=searchRegulationFallback(q,result);
-      if(response) return res.json({reply:response,messages:[...messages,{role:'assistant',content:response}],trace:{id:traceId,route,tool:'search_regulations',matchedDocuments:result.matches?.map(x=>x.data_id)||[],elapsedMs:Date.now()-started,needsHumanConfirmation:true}});
+    if (isSchool(q) && mcp.ready) {
+      route='v9-evidence-agent';
+      const result=await runEvidenceAgent({question:q,messages,mcp,traceId});
+      recordEvent({id:traceId,route,elapsedMs:Date.now()-started,sourceCount:result.sources.length,needsHumanConfirmation:result.trace.needsHumanConfirmation,toolCalls:result.trace.toolCalls.map(x=>({tool:x.tool,status:x.status,ms:x.ms}))});
+      return res.json({reply:result.reply,messages:[...messages,{role:'assistant',content:result.reply}],trace:result.trace,sources:result.sources});
     }
     if (SCHOOL.test(q) && !mcp.ready) {
       return res.status(503).json({error:'校務資料服務尚未完成啟動，請稍後再試。', detail:mcpError});
@@ -58,6 +61,15 @@ app.post('/chat', async (req, res) => {
   }
 });
 
+// Management endpoints are disabled unless an admin token is configured.
+function requireAdmin(req,res,next){const token=process.env.ADMIN_TOKEN;if(!token)return res.status(404).json({error:'disabled'});
+ const value=String(req.get('x-admin-token')||'');const a=Buffer.from(value),b=Buffer.from(token);
+ if(a.length!==b.length||!crypto.timingSafeEqual(a,b))return res.status(403).json({error:'forbidden'});next();}
+app.get('/api/admin/metrics',requireAdmin,(req,res)=>res.json(summary()));
+app.post('/api/admin/feedback',requireAdmin,(req,res)=>{const {traceId,rating,category}=req.body||{};
+ if(typeof traceId!=='string'||traceId.length>100||!['helpful','incorrect','incomplete'].includes(rating))return res.status(400).json({error:'invalid feedback'});
+ recordFeedback({traceId,rating,category:String(category||'').slice(0,40)});res.json({ok:true});});
+app.get('/admin',(req,res)=>res.sendFile(path.join(ROOT,'admin-v9.html')));
 const port = Number(process.env.PORT || 3000);
 app.listen(port, () => console.log(`YKVS AI Assistant listening on ${port}`));
 

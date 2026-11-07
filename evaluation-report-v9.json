@@ -1,0 +1,708 @@
+{
+  "count": 100,
+  "source_coverage": 0.36,
+  "accuracy": null,
+  "note": "source coverage only; accuracy requires manually reviewed official answers",
+  "results": [
+    {
+      "id": "R001",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R002",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R003",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R004",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R005",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R006",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R007",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R008",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R009",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R010",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R011",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-317.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R012",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-317.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R013",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-369.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R014",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-369.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R015",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R016",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-236.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R017",
+      "topic": "credit",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R018",
+      "topic": "credit",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R019",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-317.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R020",
+      "topic": "credit",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-317.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R021",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R022",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R023",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R024",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R025",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R026",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R027",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R028",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R029",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R030",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R031",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R032",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R033",
+      "topic": "leave",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R034",
+      "topic": "leave",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R035",
+      "topic": "leave",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R036",
+      "topic": "leave",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R037",
+      "topic": "leave",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R038",
+      "topic": "leave",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R039",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R040",
+      "topic": "leave",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/426-1000-109.php",
+      "verified_correct": null
+    },
+    {
+      "id": "R041",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R042",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R043",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R044",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R045",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R046",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R047",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R048",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R049",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R050",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R051",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R052",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R053",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R054",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R055",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R056",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R057",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R058",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R059",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R060",
+      "topic": "discipline",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R061",
+      "topic": "calendar",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/412-1000-751.php?Lang=zh-tw",
+      "verified_correct": null
+    },
+    {
+      "id": "R062",
+      "topic": "calendar",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/412-1000-751.php?Lang=zh-tw",
+      "verified_correct": null
+    },
+    {
+      "id": "R063",
+      "topic": "calendar",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/412-1000-751.php?Lang=zh-tw",
+      "verified_correct": null
+    },
+    {
+      "id": "R064",
+      "topic": "calendar",
+      "has_source": true,
+      "top_url": "https://www.ykvs.ntpc.edu.tw/p/412-1000-751.php?Lang=zh-tw",
+      "verified_correct": null
+    },
+    {
+      "id": "R065",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R066",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R067",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R068",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R069",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R070",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R071",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R072",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R073",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R074",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R075",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R076",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R077",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R078",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R079",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R080",
+      "topic": "calendar",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R081",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R082",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R083",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R084",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R085",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R086",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R087",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R088",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R089",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R090",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R091",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R092",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R093",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R094",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R095",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R096",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R097",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R098",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R099",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    },
+    {
+      "id": "R100",
+      "topic": "contact",
+      "has_source": false,
+      "top_url": null,
+      "verified_correct": null
+    }
+  ]
+}
