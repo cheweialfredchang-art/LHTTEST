@@ -6,7 +6,9 @@ const SYSTEM = `你是「鶯歌工商校務 AI 助理」。
 - 人名、職稱、分機尤其禁止自行補寫。
 - 查不到時明確說「目前找不到可以直接支持這個問題的校方資料」。
 - 使用者不必知道資料格式；要理解自然語言、省略樓層、口語說法與同義詞。
-- 只有使用者明確詢問規定、法規、條文、原文或正式文件時才展開法規內容。
+- 重修、補修、補考、學分不足、被當等口語問題，必須先使用 search_regulations 檢索 additional_regulations 的文件索引；不能因沒有提到「規定」就不查。
+- 回答必須區分：有證據的規則、未收錄的實際報名日期/費用/開班資訊、需人工確認的個案。不得補造未出現在來源中的條款。
+- 需要多份資料時可多次調用 MCP 工具；如果工具沒有支持，明確說明缺口。
 - 校務回答最後列出「🔗 資料來源」，只能使用工具回傳的來源。`;
 
 function fallbackNatural(q, raw) {
@@ -19,6 +21,7 @@ function fallbackNatural(q, raw) {
   }
   if (d.班級分機?.length) return d.班級分機.map(r => `${r.班級}：分機 ${Array.isArray(r.分機) ? r.分機.join('、') : r.分機}。`).join('\n');
   if (d.行事曆) return `查到 ${d.行事曆.length} 筆相關行事曆資料。\n\n🔗 資料來源\n• ${d.來源 || '鶯歌工商校方公告'}`;
+  if (d.校方規定索引?.matches?.length) return d.校方規定索引.matches.map(x=>`${x.title}\n${x.content}\n來源：${x.source_url}`).join('\n\n');
   if (d.法規結果?.length) return d.法規結果.map(x => `${x.文件}\n${x.原文摘錄}`).join('\n\n') + '\n\n🔗 資料來源\n• https://www.ykvs.ntpc.edu.tw/';
   return `${d.結果 || '目前找不到可以直接支持這個問題的校方資料。'}\n\n🔗 資料來源\n• ${d.官方首頁 || 'https://www.ykvs.ntpc.edu.tw/'}`;
 }

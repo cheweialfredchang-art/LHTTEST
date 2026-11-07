@@ -2,10 +2,11 @@
 from __future__ import annotations
 import json, re, sys
 from pathlib import Path
+from regulation_search import search_regulations
 
 BASE = Path(__file__).resolve().parent
-DATA = BASE / 'data'
-REG = DATA / 'regulations'
+DATA = BASE
+REG = BASE
 
 REGULATIONS = {
     'mobile_device_policy.md': {'title':'生輔組－行動載具管理規則','keywords':['行動載具','手機','平板','載具']},
@@ -121,6 +122,9 @@ def search_school_info(query: str):
     cq = compact(q)
     if not q:
         return {'錯誤': '請輸入查詢內容。'}
+    regulation = search_regulations(q)
+    if regulation['matches'] and (regulation['concepts'] or any(x in cq for x in ['法規','規定','條文','原文','正式文件','成績','學分'])):
+        return {'查詢':q, '校方規定索引':regulation}
     if any(x in cq for x in ['法規','規定','條文','原文','正式文件']):
         for fn, meta in REGULATIONS.items():
             if any(compact(k) in cq for k in meta['keywords']):
@@ -134,6 +138,8 @@ def search_school_info(query: str):
         return {'查詢': q, **ext}
     return {'查詢': q, '結果': '在目前校方資料中找不到明確紀錄。', '官方首頁': 'https://www.ykvs.ntpc.edu.tw/'}
 
+
+REG_TOOL = {'name':'search_regulations','description':'依口語同義詞查詢校方學習評量、學期補考、段考補考、重修補修、學分抵免、學習歷程等官方文件索引；提供可追溯來源與資料缺口，不得推測開班或期限。','inputSchema':{'type':'object','properties':{'query':{'type':'string'}},'required':['query']}}
 
 TOOL = {
     'name': 'search_school_info',
@@ -172,13 +178,16 @@ def main():
                 continue
             elif method == 'tools/list':
                 if mid is not None:
-                    send({'jsonrpc':'2.0','id':mid,'result':{'tools':[TOOL]}})
+                    send({'jsonrpc':'2.0','id':mid,'result':{'tools':[TOOL,REG_TOOL]}})
             elif method == 'tools/call':
                 name = params.get('name')
                 args = params.get('arguments') or {}
-                if name != 'search_school_info':
+                if name == 'search_regulations':
+                    result = search_regulations(args.get('query',''))
+                elif name == 'search_school_info':
+                    result = search_school_info(args.get('query',''))
+                else:
                     raise ValueError(f'未知工具：{name}')
-                result = search_school_info(args.get('query',''))
                 payload = json.dumps(result, ensure_ascii=False)
                 if mid is not None:
                     send({'jsonrpc':'2.0','id':mid,'result':{'content':[{'type':'text','text':payload}], 'isError':False}})

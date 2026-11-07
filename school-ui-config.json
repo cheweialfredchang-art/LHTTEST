@@ -1,0 +1,127 @@
+{
+  "school": {
+    "name": "鶯歌工商",
+    "assistantTitle": "鶯歌工商校務 AI 助理",
+    "subtitle": "校園公開資料 × MCP × AI 快速查詢",
+    "officialWebsite": "https://www.ykvs.ntpc.edu.tw/",
+    "disclaimer": "校務資訊以學校最新公告與正式文件為準；查無校方資料時不應猜測。"
+  },
+  "ui": {
+    "welcomeTitle": "今天想查什麼？",
+    "welcomeDescription": "直接用自然語言提問。涉及校務事實時優先查詢校方資料；查無依據時會明確告知。",
+    "quickClickBehavior": "fill-only",
+    "showSourcesReminder": true
+  },
+  "quickCategories": [
+    {
+      "title": "🔎 查詢小幫手",
+      "description": "點選小按鈕會帶入範例問題，確認後再按「送出」。",
+      "items": [
+        {
+          "label": "👨‍🏫 老師",
+          "query": "教務處有哪些老師或行政人員？",
+          "style": "other"
+        },
+        {
+          "label": "☎️ 分機",
+          "query": "教務處的分機是多少？",
+          "style": "other"
+        },
+        {
+          "label": "📅 行事曆",
+          "query": "這週有哪些校務行程？",
+          "style": "other"
+        },
+        {
+          "label": "📝 請假",
+          "query": "我今天生病沒辦法到學校，要怎麼請假？",
+          "style": "student"
+        },
+        {
+          "label": "🏆 獎懲",
+          "query": "學生在什麼情況下會受到獎懲？",
+          "style": "other"
+        },
+        {
+          "label": "📱 行動載具",
+          "query": "學生在校使用手機有哪些注意事項？",
+          "style": "other"
+        }
+      ]
+    },
+    {
+      "title": "📚 教務與學習",
+      "description": "",
+      "items": [
+        {
+          "label": "📝 段考／補考",
+          "query": "段考沒參加，可以怎麼處理？",
+          "style": "score"
+        },
+        {
+          "label": "📋 成績／評量",
+          "query": "學期成績不及格時可以怎麼辦？",
+          "style": "score"
+        },
+        {
+          "label": "📚 重修／補修",
+          "query": "我有科目不及格、沒有取得學分，學校重修或補修有什麼規定？請附官方文件來源並說明尚待確認的報名資訊。",
+          "style": "credit"
+        },
+        {
+          "label": "🎓 學分／畢業",
+          "query": "畢業需要符合哪些學分條件？",
+          "style": "credit"
+        },
+        {
+          "label": "🗂 學習歷程",
+          "query": "學習歷程要怎麼準備比較好？",
+          "style": "student"
+        },
+        {
+          "label": "📌 學務法規",
+          "query": "如果我想查學務相關法規，可以看哪些資料？",
+          "style": "student"
+        },
+        {
+          "label": "📖 重修規定來源",
+          "query": "鶯歌工商學生學習評量補充規定對重修補修及學期補考有什麼說明？",
+          "style": "credit"
+        }
+      ]
+    },
+    {
+      "title": "🧪 可靠性測試",
+      "description": "用於展示查無依據不猜測與跨資料問題。",
+      "items": [
+        {
+          "label": "🔍 查無資料",
+          "query": "學校明天會不會停課？如果查不到正式公告，請明確說明無法確認。",
+          "style": "other"
+        },
+        {
+          "label": "🔗 跨資料",
+          "query": "如果我要辦理請假，應參考什麼規定，以及可以向哪個單位詢問？",
+          "style": "student"
+        }
+      ]
+    }
+  ],
+  "webButtons": [
+    {
+      "label": "🏫 學校官網",
+      "url": "https://www.ykvs.ntpc.edu.tw/",
+      "description": "官方網站"
+    },
+    {
+      "label": "📄 校務資料與公告",
+      "url": "https://www.ykvs.ntpc.edu.tw/p/403-1000-337.php",
+      "description": "來源資料內所列官方頁面；上線前請人工確認"
+    },
+    {
+      "label": "📞 分機相關資料",
+      "url": "https://www.ykvs.ntpc.edu.tw/p/404-1000-25063.php",
+      "description": "來源資料內所列官方頁面；上線前請人工確認"
+    }
+  ]
+}

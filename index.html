@@ -48,8 +48,8 @@ h1{font-size:clamp(1.3rem,3vw,1.8rem);letter-spacing:-.02em;margin:0;font-weight
 .meta{color:#7a8a91;font-size:.74rem;margin-bottom:4px;font-weight:700}
 .tag-section{margin:2px 0 14px}.tag-section-title{display:flex;align-items:center;gap:8px;margin:0 0 8px;color:#4b626b;font-size:.78rem;font-weight:750}.tag-section-title:before{content:'';width:5px;height:16px;border-radius:99px;background:linear-gradient(180deg,#6f9dad,#7ea58f)}
 .quick-tags,.examples{display:flex;flex-wrap:wrap;gap:8px;margin:0}.examples{margin-top:0}.examples button,.quick-tag{position:relative;overflow:hidden;border:1px solid rgba(120,150,160,.25);background:linear-gradient(135deg,#fff 0%,#f7faf9 52%,#edf4f2 100%);color:#4d6870;border-radius:999px;padding:7px 12px;cursor:pointer;font:inherit;font-size:.8rem;line-height:1.2;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;box-shadow:0 2px 6px rgba(70,100,105,.055)}
-.examples button:hover,.quick-tag:hover{transform:translateY(-1px);border-color:rgba(82,130,140,.38);box-shadow:0 5px 12px rgba(70,100,105,.10)}.quick-tag.selected{border-color:#4d8aa0;box-shadow:0 0 0 3px rgba(77,138,160,.10),0 5px 12px rgba(70,100,105,.10)}
-.quick-tag.score{background:linear-gradient(135deg,#fff,#edf4ff);color:#41678a}.quick-tag.credit{background:linear-gradient(135deg,#fff,#edf6f1);color:#4c7564}.quick-tag.student{background:linear-gradient(135deg,#fff,#f3eef8);color:#6b5b7d}.quick-tag.other{background:linear-gradient(135deg,#fff,#f8f2e8);color:#806b4f}
+.examples button:hover,.quick-tag:hover,.school-link:hover{transform:translateY(-1px);border-color:rgba(82,130,140,.38);box-shadow:0 5px 12px rgba(70,100,105,.10)}.quick-tag.selected{border-color:#4d8aa0;box-shadow:0 0 0 3px rgba(77,138,160,.10),0 5px 12px rgba(70,100,105,.10)}
+.school-link{display:inline-flex;align-items:center;text-decoration:none;border:1px solid #cbdde1;background:#fff;color:#315d72;border-radius:999px;padding:7px 12px;font-size:.8rem;line-height:1.2}.config-warning{font-size:.8rem;color:#9a542b;margin:6px 0}.quick-tag.score{background:linear-gradient(135deg,#fff,#edf4ff);color:#41678a}.quick-tag.credit{background:linear-gradient(135deg,#fff,#edf6f1);color:#4c7564}.quick-tag.student{background:linear-gradient(135deg,#fff,#f3eef8);color:#6b5b7d}.quick-tag.other{background:linear-gradient(135deg,#fff,#f8f2e8);color:#806b4f}
 .composer{position:relative;margin-top:10px;padding:2px;border-radius:18px;background:linear-gradient(135deg,#d9e8ea,#eef4f1,#d4e2e5);box-shadow:0 7px 20px rgba(52,80,89,.055)}
 .composer-inner{background:rgba(255,255,255,.98);border-radius:16px;padding:14px 14px 11px}.composer-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 2px 8px}.composer-label{font-size:.83rem;font-weight:750;color:#3d5661;display:flex;align-items:center;gap:7px}.composer-label .dot{width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,#6f9dad,#7ea58f);box-shadow:0 0 0 4px #edf5f3}.composer-tip{font-size:.72rem;color:#8a999f;background:#f4f7f7;border:1px solid #e1e9ea;padding:4px 8px;border-radius:999px}
 textarea{display:block;width:100%;min-height:108px;resize:vertical;padding:13px 14px;border:1px solid #d2dee1;border-radius:13px;font:inherit;line-height:1.65;background:linear-gradient(180deg,#fcfefe,#f6faf9);color:var(--ink);transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;outline:none}
@@ -84,28 +84,10 @@ textarea::placeholder{color:#a5b1b5}textarea:hover{border-color:#b9cbd0}textarea
     </div>
     <div id="log" role="log" aria-live="polite" aria-label="對話紀錄"></div>
 
-    <div class="tag-section helper-section">
-      <div class="tag-section-title">🔎 查詢小幫手</div>
-      <div class="helper-note">點選標籤只是提供「提問範例」，不會直接送出。你可以先修改問題，再按「送出」。</div>
-      <div class="quick-tags" aria-label="查詢小幫手提問分類">
-        <button class="quick-tag other" data-query="XXX老師在哪個單位？">👨‍🏫 老師</button>
-        <button class="quick-tag other" data-query="教務處的分機是多少？">☎️ 分機</button>
-        <button class="quick-tag other" data-query="這週有哪些校務行程？">📅 行事曆</button>
-        <button class="quick-tag student" data-query="我今天生病沒辦法到學校，要怎麼請假？">📝 請假</button>
-        <button class="quick-tag other" data-query="學生在什麼情況下會受到獎懲？">🏆 獎懲</button>
-        <button class="quick-tag other" data-query="學生在校使用手機有哪些注意事項？">📱 行動載具</button>
-      </div>
-    </div>
-    <div class="tag-section">
-      <div class="tag-section-title">📚 教務與學習</div>
-      <div class="quick-tags" aria-label="教務與學習提問範例">
-        <button class="quick-tag score" data-query="段考沒參加，可以怎麼處理？">📝 段考／補考</button>
-        <button class="quick-tag score" data-query="學期成績不及格時可以怎麼辦？">📋 成績／評量</button>
-        <button class="quick-tag credit" data-query="重修通常要怎麼辦理？">📚 重修／補修</button>
-        <button class="quick-tag credit" data-query="畢業需要符合哪些學分條件？">🎓 學分／畢業</button>
-        <button class="quick-tag student" data-query="學習歷程要怎麼準備比較好？">🗂 學習歷程</button>
-        <button class="quick-tag student" data-query="如果我想查學務相關法規，可以看哪些資料？">📌 學務法規</button>
-      </div>
+    <div id="quick-categories" aria-label="快速分類與提問範例"></div>
+    <div class="tag-section" aria-label="學校官方連結">
+      <div class="tag-section-title">🔗 學校官方連結</div>
+      <div id="school-links" class="quick-tags"></div>
     </div>
     <div class="composer">
       <div class="composer-inner">
@@ -125,6 +107,7 @@ textarea::placeholder{color:#a5b1b5}textarea:hover{border-color:#b9cbd0}textarea
 <footer>資料以鶯歌工商校方公開文件為基礎；明確校務查詢會優先使用校方資料，開放性問題則交由 AI 進行一般理解與回答。法規、考試與辦理期限如有更新，請以校方最新公告及正式文件為準。</footer>
 </main>
 
+<script src="./school-ui.js" defer></script>
 <script>
 const logEl=document.getElementById('log'),msgEl=document.getElementById('msg'),sendBtn=document.getElementById('send');
 const messages=[];
@@ -152,7 +135,8 @@ async function send(query, fromComposer=false){
   const body=await res.text();let data={};try{data=body?JSON.parse(body):{}}catch{data={error:body}}
   if(!res.ok)throw new Error(data.error||`${res.status} ${res.statusText||'伺服器回應錯誤'}`);
   if(Array.isArray(data.messages)){messages.length=0;messages.push(...data.messages)}
-  render('assistant',data.reply||'目前沒有收到文字回答。');
+  const traceNote=data.trace?.id ? `\n\n🧭 查詢紀錄：${data.trace.route||'agent'}｜${data.trace.elapsedMs} ms｜ID ${data.trace.id.slice(0,8)}` : '';
+  render('assistant',(data.reply||'目前沒有收到文字回答。')+traceNote);
  }catch(err){render('assistant','查詢失敗：'+err.message+'。請確認服務正在執行。')}
  finally{
    sendBtn.disabled=false;
@@ -164,16 +148,14 @@ async function send(query, fromComposer=false){
 }
 sendBtn.addEventListener('click',()=>send(undefined,true));
 msgEl.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();send(undefined,true)}});
-document.querySelectorAll('[data-query]').forEach(btn=>btn.addEventListener('click',()=>{
-  // 快速標籤是「提問引導」，只把範例放進輸入框，不自動送出。
-  // preventScroll 可避免點標籤後頁面跳到最下面。
-  msgEl.value=btn.dataset.query||'';
-  msgEl.focus({preventScroll:true});
-  try{msgEl.setSelectionRange(msgEl.value.length,msgEl.value.length)}catch{}
-  btn.classList.remove('selected');
-  void btn.offsetWidth;
-  btn.classList.add('selected');
-}));
+document.getElementById('quick-categories').addEventListener('click',e=>{
+ const btn=e.target.closest('button[data-query]'); if(!btn)return;
+ msgEl.value=btn.dataset.query||'';
+ msgEl.focus({preventScroll:true});
+ try{msgEl.setSelectionRange(msgEl.value.length,msgEl.value.length)}catch{}
+ document.querySelectorAll('.quick-tag.selected').forEach(x=>x.classList.remove('selected'));
+ btn.classList.add('selected');
+});
 document.getElementById('clear').addEventListener('click',()=>{messages.length=0;logEl.replaceChildren();msgEl.focus()});
 
 // 點擊漣漪：按鈕會從實際點擊位置產生柔和漣漪
