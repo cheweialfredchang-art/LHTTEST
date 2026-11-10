@@ -1,5 +1,6 @@
 import {taiwanCalendar} from './taiwan-time.js';
 import crypto from 'node:crypto';
+import {recordTool} from './render-audit.js';
 const CREDIT=/重修|補修|重補修|學分|被當|補考|畢業條件|畢業門檻/;
 const LEAVE=/請假|病假|事假|補假|喪假/;
 const SCHOOL=/重修|補修|學分|補考|畢業|請假|病假|獎懲|校規|規定|公告|行事曆|日期|分機|教務|學務|學習歷程|老師|教師|學校|報名|開學|成績|手機|載具|獎學金/;
@@ -26,7 +27,7 @@ export function selectEvidence(results){
 export async function runEvidenceAgent({question,messages,mcp,traceId=crypto.randomUUID()}){
  const calendar=taiwanCalendar();
  const started=Date.now(),rewrites=rewriteQuery(question,messages.slice(0,-1));const calls=[];const results=[];
- const run=async(name,q)=>{const t=Date.now();try{const result=parse(await mcp.callTool(name,{query:q}));calls.push({tool:name,query:q,status:'ok',ms:Date.now()-t,matches:result.matches?.length||0});results.push(result);return result}catch(e){calls.push({tool:name,query:q,status:'error',ms:Date.now()-t,error:String(e.message).slice(0,100)});return {matches:[]}}};
+ const run=async(name,q)=>{const t=Date.now();try{const result=parse(await mcp.callTool(name,{query:q}));calls.push({tool:name,query:q,status:'ok',ms:Date.now()-t,matches:result.matches?.length||0});recordTool(traceId,{name,success:true,latencyMs:Date.now()-t});results.push(result);return result}catch(e){calls.push({tool:name,query:q,status:'error',ms:Date.now()-t,error:String(e.message).slice(0,100)});recordTool(traceId,{name,success:false,latencyMs:Date.now()-t,error:e.message});return {matches:[]}}};
  if(CREDIT.test(question))await run('search_regulations',rewrites[0]);
  let result=await run('search_school_pages',rewrites[0]);
  if(!result.matches?.length || result.matches.length<2){if(rewrites.length>1)await run('search_school_pages',rewrites[1]);}

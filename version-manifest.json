@@ -1,0 +1,11 @@
+{
+  "release": "V11.0",
+  "strategy_version": "evidence-v9+audit-v11",
+  "prompt_version": "llm-client-openai.js@V10",
+  "model": "from OPENAI_MODEL environment",
+  "data_file": "school-crawl-data.json",
+  "data_sha256": "8d5b0286f2bb6c73fa7685529f293f6bb1c96bf4c8ff9f3e648d890534c2870c",
+  "source": "public school crawl snapshot",
+  "evaluation_status": "not yet executed on real users",
+  "git_commit": "set at deployment via GIT_COMMIT"
+}

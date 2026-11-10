@@ -34,3 +34,7 @@ npm start
 開啟 `http://localhost:3000`，健康檢查路徑為 `/healthz`。
 
 Python MCP 透過 `PYTHON_BIN` 指定的執行檔啟動，Node 執行環境必須能找到 Python 3。若 Render 的 Node Runtime 未提供 Python，需使用含 Node + Python 的 Docker 部署環境。
+
+
+## V11 決賽評測
+請閱讀 `README_V11_EVALUATION.md`。

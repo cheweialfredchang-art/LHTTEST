@@ -1,0 +1,7 @@
+﻿error_class,worst_case,detection,recovery,observed_count,evidence_trace_id
+MCP_IMPORT,MCP fails to start,healthz mcpReady=false,check school_crawl_search.py and rebuild,,
+PDF_MISSING,rules absent,no extracted PDF records,install pypdf and recrawl,,
+PROMPT_INJECTION,malicious instruction in webpage,security test,ignore source instructions; use evidence-only,,
+STALE_ANNOUNCEMENT,wrong deadline,source timestamp,verify official latest notice,,
+API_TIMEOUT,query stalls,HTTP timeout,bounded retry and human referral,,
+PRIVACY,student data exposure,security probe,deny access and redact logs,,

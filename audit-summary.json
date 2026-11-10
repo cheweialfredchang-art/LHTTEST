@@ -1,0 +1,160 @@
+{
+  "report_type": "real_observation_only",
+  "generated_at_utc": "2026-11-10T12:36:31.599478+00:00",
+  "status": "NOT_MEASURED",
+  "task_definition": {
+    "success": "Human-verified answer supported by official evidence, OR appropriate refusal/handoff when data is unavailable or restricted; HTTP 200 alone is NOT success.",
+    "accuracy": "Among manually reviewed substantive answers, correct and supported by official evidence; refusals scored separately.",
+    "gold_review": "Set correct/task_success explicitly true or false only after human review; null means unreviewed."
+  },
+  "test_cases": {
+    "planned": 120,
+    "executed": 0,
+    "security_planned": 10,
+    "security_executed": 0,
+    "gold_verified": 0
+  },
+  "environment": {
+    "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "node": "22.16.0",
+    "timezone_policy": "Asia/Taipei for user-facing time",
+    "endpoint": "not_recorded",
+    "git_commit": "not_recorded",
+    "data_sha256": "8d5b0286f2bb6c73fa7685529f293f6bb1c96bf4c8ff9f3e648d890534c2870c",
+    "cases_sha256": "6f9831423b0ba056bd1f2eb94b9263bace113273629e93519c7d2932ad29ff84",
+    "security_cases_sha256": "19ad31844f299d1bb6b1fb811fec3bc02d7161ebbaaba529c98c9d14822bd2b1",
+    "prompt_file_sha256": "367c3639df11c9cc0289e8255b5e42dd25074a1130cf443ae50307863d900c25",
+    "strategy_file_sha256": "39e186f87f189b26d6d73b6d0f656cc2a0c118be3609b65fddb1a4603d581cfc",
+    "model": "not_recorded",
+    "model_version": "provider-specific snapshot not captured unless pinned",
+    "source": "school-crawl-data.json; see version-manifest.json"
+  },
+  "comparisons": {
+    "agent": {
+      "executed": 0,
+      "task_success": {
+        "rate": null,
+        "reviewed": 0,
+        "total": 0
+      },
+      "answer_accuracy": {
+        "rate": null,
+        "reviewed": 0,
+        "total": 0
+      },
+      "latency_ms": {
+        "average": null,
+        "maximum": null
+      }
+    },
+    "keyword_fixed_workflow": {
+      "executed": 120,
+      "candidate_found_rate": 0.0,
+      "task_success": {
+        "rate": null,
+        "reviewed": 0,
+        "total": 120
+      },
+      "answer_accuracy": {
+        "rate": null,
+        "reviewed": 0,
+        "total": 120
+      },
+      "latency_ms": {
+        "average": null,
+        "maximum": null
+      }
+    },
+    "human_manual": {
+      "status": "NOT_MEASURED",
+      "records": 0
+    },
+    "single_model": {
+      "status": "NOT_MEASURED",
+      "records": 0
+    }
+  },
+  "metrics": {
+    "http_200_rate": null,
+    "task_success": {
+      "rate": null,
+      "reviewed": 0,
+      "total": 0
+    },
+    "accuracy": {
+      "rate": null,
+      "reviewed": 0,
+      "total": 0
+    },
+    "average_latency_ms": null,
+    "maximum_latency_ms": null,
+    "model_api_cost_usd_total": null,
+    "cost_coverage": null,
+    "tool_call_success_rate": null,
+    "tool_calls": 0,
+    "tool_successes": 0,
+    "tool_failures": 0,
+    "retry_count_reported": 0,
+    "retry_coverage": "partial; backend retries may not be instrumented",
+    "human_escalation_rate": null,
+    "abort_rate": null
+  },
+  "errors": {},
+  "security": {
+    "probes": 0,
+    "review": {
+      "rate": null,
+      "reviewed": 0,
+      "total": 0
+    },
+    "categories": {},
+    "status": "NOT_MEASURED"
+  },
+  "trace": {
+    "trace_event_count": 0,
+    "agent_request_trace_ids": 0,
+    "real_trace_files": [
+      "evaluation-results.jsonl",
+      "agent-traces.jsonl",
+      "v11-traces.jsonl"
+    ],
+    "demo_trace_excluded": true
+  },
+  "known_limitations": [
+    "Current crawl snapshot may be stale and PDF full text may be absent",
+    "Agent evaluator does not automatically verify correctness",
+    "Model usage and API cost are null unless measured by backend",
+    "Human and single-model baselines require separately collected runs",
+    "Trace fields reflect only instrumented layers",
+    "Local logs on Render ephemeral storage may be lost after restart",
+    "Security probes need manual pass/fail review"
+  ],
+  "worst_case_and_recovery": [
+    {
+      "scenario": "MCP startup failure",
+      "impact": "school search unavailable",
+      "recovery": "fail closed, alert operator, check Python module import, restart after fix"
+    },
+    {
+      "scenario": "source missing or conflicting",
+      "impact": "unsupported answer",
+      "recovery": "state uncertainty, cite available source, refer to school office"
+    },
+    {
+      "scenario": "API timeout / 429",
+      "impact": "latency or no answer",
+      "recovery": "bounded retry with backoff; safe fallback; log abort"
+    },
+    {
+      "scenario": "prompt injection in crawled text",
+      "impact": "instruction hijack",
+      "recovery": "treat retrieved text as untrusted; block tool/secret access; security regression test"
+    },
+    {
+      "scenario": "personal data request",
+      "impact": "privacy breach",
+      "recovery": "deny unauthorized access, redact logs, escalate to authorized staff"
+    }
+  ]
+}

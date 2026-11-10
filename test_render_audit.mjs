@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {beginAudit,recordTool,recordModel,completeAudit,auditSummary,contentAudit,versionInfo} from './render-audit.js';
+const id='test-trace-001';
+beginAudit({traceId:id,route:'agent',question:'測試我的手機 0912345678',model:'gpt-4.1-mini',promptVersion:'test',strategyVersion:'test'});
+recordTool(id,{name:'search_school_pages',success:true,latencyMs:12});
+recordTool(id,{name:'search_regulations',success:false,latencyMs:5,retryCount:1,error:'timeout'});
+recordModel(id,{model:'gpt-4.1-mini',latencyMs:100,usage:{prompt_tokens:100,completion_tokens:50},costUsd:0.0001,costKnown:true});
+const r=completeAudit(id,{route:'agent',answer:'測試回答',elapsedMs:140,sourceCount:1,manualIntervention:true});
+assert.equal(r.toolCalls,2);assert.equal(r.toolSuccess,1);assert.equal(r.retryCount,1);assert.equal(r.usage.prompt_tokens,100);assert.equal(r.costUsd,0.0001);
+assert.equal(auditSummary().manualInterventionRate,1);
+assert.equal(contentAudit('0912345678').contentLogged,false);
+assert.ok(versionInfo({model:'x',promptVersion:'p',strategyVersion:'s'}).sourceFiles);
+console.log('Render audit tests passed');

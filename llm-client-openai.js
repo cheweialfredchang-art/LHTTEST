@@ -1,6 +1,8 @@
 import {taiwanCalendar} from './taiwan-time.js';
 import OpenAI from 'openai';
+import {recordTool,recordModel} from './render-audit.js';
 
+export const PROMPT_VERSION = 'school-system-v11.3-20261110';
 const SYSTEM = `你是「鶯歌工商校務 AI 助理」。
 - 一般問題用自然、簡潔的繁體中文回答。
 - 涉及學校事實（老師、處室、分機、教室、場館、班級、行事曆、校規等）只能使用 MCP 查到的資料，不得猜測。
@@ -44,10 +46,10 @@ export class OpenAILLMClient {
     this.maxAgentSteps = Math.max(1, Math.min(10, Number.parseInt(process.env.MAX_AGENT_STEPS || '4', 10) || 4));
   }
 
-  async chat(messages, {forceTool=false}={}) {
+  async chat(messages, {forceTool=false,traceId=null}={}) {
     const user = String([...messages].reverse().find(x => x?.role === 'user')?.content || '');
     if (!this.enabled) {
-      const raw = await this.mcp.callTool('search_school_info', {query:user});
+      const toolStart=Date.now();let raw;try{raw=await this.mcp.callTool('search_school_info', {query:user});if(traceId)recordTool(traceId,{name:'search_school_info',success:true,latencyMs:Date.now()-toolStart});}catch(e){if(traceId)recordTool(traceId,{name:'search_school_info',success:false,latencyMs:Date.now()-toolStart,error:e.message});throw e;}
       const answer = fallbackNatural(user, raw);
       return {reply:answer, messages:[...messages,{role:'assistant',content:answer}]};
     }
@@ -62,7 +64,9 @@ export class OpenAILLMClient {
         request.tools = tools;
         request.tool_choice = needsTool ? 'required' : 'auto';
       }
+      const modelStart=Date.now();
       const completion = await this.openai.chat.completions.create(request);
+      if(traceId)recordModel(traceId,{model:this.model,latencyMs:Date.now()-modelStart,usage:completion.usage,costUsd:calculateCost(this.model,completion.usage).costUsd,costKnown:calculateCost(this.model,completion.usage).known,finishReason:completion.choices?.[0]?.finish_reason});
       const msg = completion.choices?.[0]?.message || {};
       history.push(msg);
       if (!msg.tool_calls?.length) {
@@ -73,15 +77,18 @@ export class OpenAILLMClient {
         let args = {};
         try { args = JSON.parse(tc.function.arguments || '{}'); } catch {}
         let out;
-        try { out = await this.mcp.callTool(tc.function.name, args); }
-        catch (e) { out = JSON.stringify({error: e.message || '工具呼叫失敗'}); }
+        const toolStart=Date.now();
+        try { out = await this.mcp.callTool(tc.function.name, args);if(traceId)recordTool(traceId,{name:tc.function.name,success:true,latencyMs:Date.now()-toolStart}); }
+        catch (e) {if(traceId)recordTool(traceId,{name:tc.function.name,success:false,latencyMs:Date.now()-toolStart,error:e.message});out = JSON.stringify({error: e.message || '工具呼叫失敗'}); }
         history.push({role:'tool', tool_call_id:tc.id, content:out});
       }
       if (step === this.maxAgentSteps - 1) {
+        const finalStart=Date.now();
         const final = await this.openai.chat.completions.create({
           model: this.model, messages: history, max_tokens: 1200,
           tool_choice: 'none'
         });
+        if(traceId){const price=calculateCost(this.model,final.usage);recordModel(traceId,{model:this.model,latencyMs:Date.now()-finalStart,usage:final.usage,costUsd:price.costUsd,costKnown:price.known,finishReason:final.choices?.[0]?.finish_reason});}
         answer = String(final.choices?.[0]?.message?.content || '');
       }
     }
@@ -92,4 +99,13 @@ export class OpenAILLMClient {
     // Keep provider-internal tool calls out of browser conversation history.
     return {reply:answer,messages:[...messages,{role:'assistant',content:answer}]};
   }
+}
+
+// Prices are NOT hard-coded: configure USD per 1M tokens from the current provider price sheet.
+function calculateCost(model,usage){
+ const inPrice=Number(process.env.OPENAI_INPUT_USD_PER_1M);
+ const outPrice=Number(process.env.OPENAI_OUTPUT_USD_PER_1M);
+ const configured=process.env.OPENAI_INPUT_USD_PER_1M!==undefined&&process.env.OPENAI_OUTPUT_USD_PER_1M!==undefined;
+ if(!configured||!Number.isFinite(inPrice)||!Number.isFinite(outPrice)||!usage)return {known:false,costUsd:null};
+ return {known:true,costUsd:((usage.prompt_tokens||0)*inPrice+(usage.completion_tokens||0)*outPrice)/1e6};
 }

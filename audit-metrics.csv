@@ -1,0 +1,16 @@
+﻿metric,value,status
+http_200_rate,,not_measured
+task_success,"{""rate"": null, ""reviewed"": 0, ""total"": 0}",not_measured
+accuracy,"{""rate"": null, ""reviewed"": 0, ""total"": 0}",not_measured
+average_latency_ms,,not_measured
+maximum_latency_ms,,not_measured
+model_api_cost_usd_total,,not_measured
+cost_coverage,,not_measured
+tool_call_success_rate,,not_measured
+tool_calls,0,not_measured
+tool_successes,0,not_measured
+tool_failures,0,not_measured
+retry_count_reported,0,not_measured
+retry_coverage,partial; backend retries may not be instrumented,not_measured
+human_escalation_rate,,not_measured
+abort_rate,,not_measured
